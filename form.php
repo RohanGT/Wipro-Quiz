@@ -1,6 +1,10 @@
 <?php
 require 'config.php';
 require 'validation.php';
+global $error;
+global $success;
+$error="";
+$success="";
     if(isset($_POST['submit']))
     {   
         $name=valid($_POST['name']);
@@ -15,9 +19,23 @@ require 'validation.php';
         }
         else
         {
-            $sql="INSERT INTO user VALUES ('$name','$regno','$branch','$semester','$phone','$email')";
-            if (mysqli_query($conn,$sql) )
-                header ("Location: success.php");
+        	try
+        	{
+            	$sqlqr="INSERT INTO user (name,regno,branch,semester,phone,email) VALUES ('$name','$regno','$branch','$semester','$phone','$email')";
+            	$sql=$conn->prepare($sqlqr);
+           		$sql->bindParam(':nam',$name);
+           		$sql->bindParam(':rno',$regno);
+            	$sql->bindParam(':br',$branch);
+            	$sql->bindParam(':sem',$semester);
+            	$sql->bindParam(':ph',$phone);
+            	$sql->bindParam(':mail',$email);
+            	if($sql->execute());
+            		$success="Successfully Registered";
+        	}
+        	catch(PDOException $e)
+        	{
+        		$error="Registration number already entered";
+        	}
         }
     }
 ?>  
