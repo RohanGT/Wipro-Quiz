@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     padding: 0;
-    background: #efefef;
+    background: rgba(23, 23, 23, 0.6);
     font-size: 16px;
     color: #777;
     font-family: sans-serif;
@@ -39,7 +39,7 @@ body
     padding: 40px;
     width: 300px;
     height: 400px;
-    background-image: url(image1.jpg);
+    background-image: url(wipro.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -55,7 +55,7 @@ input
     border: none;
     outline: none;
     border-bottom: 1px solid #aaa;
-    font-family: sans-serif;
+    font-family: "apercu",sans-serif;
     font-weight: 400;
     font-size: 15px;
     transition: 0.2s ease;
