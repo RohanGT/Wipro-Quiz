@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     padding: 0;
-    background: rgba(23, 23, 23, 0.6);
+    background: linear-gradient(to right, #B483CD, #442C64);
     font-size: 16px;
     color: #777;
     font-family: sans-serif;
@@ -19,15 +19,17 @@ body
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.left-box
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 300px;
-    height: 400px;    
+.left-box {
+  overflow: hidden;
+  height: 600px;
+  width: 400px;
+  top: -25%;
+  left: 0;
+  position: absolute;
+  transition: 750ms cubic-bezier(0.89, 0.03, 0.06, 1.5);
+  background: #232A3F;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
 }
 
 .right-box
@@ -39,7 +41,7 @@ body
     padding: 40px;
     width: 300px;
     height: 400px;
-    background-image: url(wipro.jpg);
+    background-image: url(placeholder.jpg);
     background-size: cover;
     background-position: center;
 }
