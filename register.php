@@ -14,9 +14,9 @@
 	<div id="container">
 		<form method="POST" enctype="multipart/form-data" action='<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]) ?>' >
 			<p id="Register">Registration</p>
-			<input type="text" name="name" placeholder="Name" required>
-			<input type="number" name="regno" placeholder="Registration Number" min="160000000" max="190000000" required title="Required">
-			<input type="text" name="branch" placeholder="Branch" required>
+			<input type="text" name="name" placeholder="Name" required value="<?php if(!empty($name)) echo $name?>">
+			<input type="number" name="regno" placeholder="Registration Number" min="160000000" max="190000000" required title="Required" value="<?php if(!empty($regno)) echo $regno?>">
+			<input type="text" name="branch" placeholder="Branch" required value="<?php if(!empty($branch)) echo $branch?>">
 			Semester:
 				<select name="semester">
 					<option value=1>1</option>
@@ -28,8 +28,8 @@
 					<option value=7>7</option>
 					<option value=8>8</option>
 				</select>
-			<input type="email" name="email" placeholder="email" required>
-			<input type="number" name="phone" placeholder="Mobile-No" min="1000000000" max="9999999999" required>
+			<input type="email" name="email" placeholder="email" required value="<?php if(!empty($email)) echo $email?>">
+			<input type="number" name="phone" placeholder="Mobile-No" min="1000000000" max="9999999999" required value="<?php if(!empty($phone)) echo $phone?>">
 			<span id='succ'><?php echo $success?></span>
 			<span id='err'><?php echo $error?></span>
 			<input type="submit" name="submit" id="submit">
