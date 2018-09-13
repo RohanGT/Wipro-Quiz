@@ -10,8 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class ="divider"></div>
 	<div id="container">
+		<div class="left-box">
 		<form method="POST" enctype="multipart/form-data" action='<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]) ?>' >
 			<p id="Register">Registration</p>
 			<input type="text" name="name" placeholder="Name" required>
@@ -33,6 +33,7 @@ session_start();
 			<input type="number" name="number" placeholder="Mobile-No" min="1000000000" max="9999999999" required>
 		</form>
 	</div>
+	<div class="right-box"></div>
+	</div>
 </body>
 </html>
-
