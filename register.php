@@ -17,8 +17,10 @@
 			<div><input type="text" name="name" placeholder="Name" required value="<?php if(!empty($name)) echo $name?>"></div>
 			<div><input type="number" name="regno" placeholder="Registration Number" min="160000000" max="190000000" required title="Required" value="<?php if(!empty($regno)) echo $regno?>"></div>
 			<div><input type="text" name="branch" placeholder="Branch" required value="<?php if(!empty($branch)) echo $branch?>"></div>
-			<div>Semester:
-				<select name="semester">
+			<div >
+				<div id="select">
+				<select>
+					<option value=NULL disabled selected>Semester</option>
 					<option value=1>1</option>
 					<option value=2>2</option>
 					<option value=3>3</option>
@@ -28,7 +30,9 @@
 					<option value=7>7</option>
 					<option value=8>8</option>
 				</select>
+				</div>
 			</div>
+			
 			<div><input type="email" name="email" placeholder="Email" required value="<?php if(!empty($email)) echo $email?>"></div>
 			<div><input type="number" name="phone" placeholder="Mobile-No" min="1000000000" max="9999999999" required value="<?php if(!empty($phone)) echo $phone?>"></div>
 			<div>
@@ -36,7 +40,9 @@
 			<span class="final"><?php echo $error?></span>
 			</div>
 			<div><input type="submit" name="submit" id="submit" value="Submit"></div>
+
 		</form>
+			<div id="ins"><a href="Document.pdf" download >Click to Download Instructions</a></div>
 		</div>
 	</div>
 </body>
