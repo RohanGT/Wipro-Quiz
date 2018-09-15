@@ -19,10 +19,9 @@ $success="";
         }
         else
         {
-            if (!ctype_alpha ($name))
-            {
-                $error="Name must only have letters";
-            }
+            if (ctype_alpha(str_replace(' ', '', $name)) === false) {
+                $errors = "Name must contain letters and spaces only";
+}
             else
             {
             	try
