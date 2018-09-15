@@ -1,62 +1,182 @@
-body
-{
+@font-face {
+    font-family: 'NexaFreeLightwebfont';
+    src: url(fonts/NexaFreeLightwebfont.ttf) format('truetype');
+}
+* {
+    font-family: 'NexaFreeLightwebfont';
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #B483CD, #442C64);
-    font-size: 16px;
-    color: #777;
-    font-family: sans-serif;
-    font-weight: 300;
 }
-
+html
+{
+    height: 100%;
+}
+body
+{
+    background: linear-gradient(to right, #B483CD, #442C64);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#tt
+{
+    float: right;
+    max-width: 15vh;
+    max-height: 15vh;
+    height: auto;
+    width: auto;
+}
+#mahe
+{
+    max-width: 30vw;   
+}
+label {
+    color: #FFF !important;
+}
+h2 {
+    text-align: center;
+    color: rgba(238, 238, 238,0.95);
+    text-shadow: 0 0 5px #000000;
+}
+main {
+    width: 100%;
+    margin-top: 12vh;
+    display: inline-flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+/*
 #container
 {
-    position: relative;
-    margin: 5% auto;
-    height: 400px;
-    width: 600px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.left-box
+    background-color: white;
+    height:500px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    box-shadow: 5px 5px 3px #472158;
+    border-radius: 4px;
+    padding: 1%;
+    text-align: left;
+    background-image: url('wipro.png');
+    background-repeat: no-repeat;
+    background-size: 50% 60%;
+    background-position: right ;
+}*/
+#wipro
 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 300px;
-    height: 400px;    
+    max-width: 50vh;
+    max-height: 50vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
 }
-
-.right-box
+h1
 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 300px;
-    height: 400px;
-    background-image: url(wipro.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-input
-{
+    margin-top: -5vh;
     display: block;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    padding: 4px;
-    width: 220px;
-    height: 32px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #aaa;
-    font-family: "apercu",sans-serif;
-    font-weight: 400;
+    text-align:center;
+    color: rgba(238, 238, 238,0.95);
+    text-shadow: 0 0 5px #000000;
+    padding-bottom: 10px;
+}
+section 
+{
+    width: 50%;
+    margin-top: -20vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section>div {
+    padding: 50px;
+    color: #FFF;
+    font-size: 1.15em;
+}
+
+form {
+    width: 50%;
+    height: 100%;
+    float: right;
+    clear: both;
+}
+.final
+{
+    margin-left:20px;
+}
+.sub
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#submit
+{
+    background-color: #4cadad;
+    border:none;
+    color:white;
+    transition: background-color 0.5s;   
+    border-radius: 6px;
+    margin-left: 35%;
+    width: 30%;
+    padding: 8px ;
+    box-shadow: 4px 4px 6px black;
+}
+#submit:hover
+{
+    background-color: #3e8e8e;
+    cursor: pointer;
+}
+.i
+{
+    text-align: center;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 60%;
+    margin: 10px;
+    border-color:lightgrey;
+    transition: border-color 1s;
+}
+ 
+.i:focus
+{
+    outline:none;
+    border-color: #00b2b2;
+}
+.f2
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+label { 
+    white-space: nowrap;
+    overflow: hidden;
+    float:left;  
+    font-size: 3vh;   
+    }
+.semf2
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.semf2 select
+{
+    text-align: center;
+    border-style: border-box;
+    border-radius: 4px;
+    padding: 6px;
     font-size: 15px;
-    transition: 0.2s ease;
+    width: 70%;
 }
