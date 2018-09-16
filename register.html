@@ -1,41 +1,75 @@
 <?php
-session_start();
-?>
+	require 'form.php';
+	?>
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<title>Quiz Registration</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?<?=filemtime("style.css")?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div id="container">
-		<div class="left-box">
+	<header>
+		<img src="TTLight.png" id="tt" alt="TechTatva">
+        <img src="MAHE.png" id="mahe" alt="MAHE">
+        <h1>Registration Form</h1>
+    </header>
+    <main>
+    <div class="Grid">
+            <div>
+                <div class="h2"><h2> Welcome to the Wipro Quiz!</h2></div>
+                <p class="wipro">
+                	<div class="wiprod"><img src="wipro.png" id="wipro" alt="Wipro"></div>
+                   	<div id="ins"><a href="Document.pdf" download >Click to Download Instructions</a></div>
+                </p>
+            </div>
 		<form method="POST" enctype="multipart/form-data" action='<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]) ?>' >
-			<p id="Register">Registration</p>
-			<input type="text" name="name" placeholder="Name" required>
-			<input type="number" name="regno" placeholder="Registration Number" required="" min="160000000" max="190000000" required title="Required">
-			<input type="text" name="Branch" placeholder="Branch" required>
-			<form id="drp-dwn">Semester:
-				<select>
-					<option value=1>1</option>
-					<option value=2>2</option>
-					<option value=3>3</option>
-					<option value=4>4</option>
-					<option value=5>5</option>
-					<option value=6>6</option>
-					<option value=7>7</option>
-					<option value=8>8</option>
-				</select>
-			</form>
-			<input type="email" name="email" placeholder="email" required>
-			<input type="number" name="number" placeholder="Mobile-No" min="1000000000" max="9999999999" required>
-			<input type="submit" name="submit" value="submit">
+				<div class="lname"><label for="name">Name:</label></div>
+				<div class="f2 fname">
+					<input type="text" name="name" class="i" placeholder="Name" required value="<?php if(!empty($name)) echo $name?>">
+				</div>
+				<div class="lregno"><label for="regno">Registration No:</label></div>
+				<div class="f2 fregno">
+					<input type="number" name="regno" class="i" placeholder="Registration Number" min="130000000" max="190000000" required title="Required" value="<?php if(!empty($regno)) echo $regno?>">
+				</div>
+				<div class="lbranch"><label for="branch">Branch:</label></div>
+				<div class="f2 fbranch">
+					<input type="text"  class="i" name="branch" placeholder="Branch" required value="<?php if(!empty($branch)) echo $branch?>">
+				</div>
+				<div class="semf2">
+					<div class="lsem"><label>Semester:</label></div>
+					<select name="semester" id="sem2">
+						<option value=1>Semester 1</option>
+						<option value=2>Semester 2</option>
+						<option value=3>Semester 3</option>
+						<option value=4>Semester 4</option>
+						<option value=5>Semester 5</option>
+						<option value=6>Semester 6</option>
+						<option value=7>Semester 7</option>
+						<option value=8>Semester 8</option>
+						<option value=9>Other</option>
+					</select>
+				</div>
+				<div class="lemail"><label for="email">Email:</label></div>
+				<div class="f2 femail">
+					<input type="email" class="i" name="email" placeholder="Email" required value="<?php if(!empty($email)) echo $email?>">
+				</div>
+				<div class="lphone"><label for="phone">Phone No:</label></div>
+				<div class="f2 fphone">
+					<input type="number"class="i"  name="phone" placeholder="Mobile-No" min="1000000000" max="9999999999" required value="<?php if(!empty($phone)) echo $phone?>">
+				</div>
+			<div class="finald">
+				<span class="final"><?php echo $success?></span>
+				<span class="final"><?php echo $error?></span>
+			</div>
+			<div id="sub">
+				<input type="submit" name="submit" id="submit" value="Submit">
+			</div>
 		</form>
-	</div>
-	<div class="right-box"></div>
-	</div>
+		</div>	
+		</main>
 </body>
 </html>
 
