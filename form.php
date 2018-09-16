@@ -18,29 +18,46 @@ $success="";
             $error= "All the fields are required to be filled!";
         }
         else
-        {
-            if (ctype_alpha(str_replace(' ', '', $name)) === false) {
-                $errors = "Name must contain letters and spaces only";
-}
+        {    
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) 
+            {
+                $error = "Name must contain letters and spaces only";
+            }
+            else if($regno<130000000||$regno>190000000)
+            {
+                $error = "Invalid registration number";
+            }
+            else if(ctype_alpha($branch)==false)
+            {
+                $error="Invalid Branch";
+            }
+            else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+            {
+                $error="Invalid email format";
+            }
+            else if($phone<1000000000||$phone>9999999999)
+            {
+                $error="Invalid phone number";
+            }
             else
             {
-            	try
-            	{
-                	$sqlqr="INSERT INTO user (name,regno,branch,semester,phone,email) VALUES ('$name','$regno','$branch','$semester','$phone','$email')";
-                	$sql=$conn->prepare($sqlqr);
-               		$sql->bindParam(':nam',$name);
-               		$sql->bindParam(':rno',$regno);
-                	$sql->bindParam(':br',$branch);
-                	$sql->bindParam(':sem',$semester);
-                	$sql->bindParam(':ph',$phone);
-                	$sql->bindParam(':mail',$email);
-                	if($sql->execute());
-                		$success="Successfully Registered";
-            	}
-            	catch(PDOException $e)
-            	{
-            		$error="Registration number already entered";
-            	}
+        	try
+        	{
+            	$sqlqr="INSERT INTO user (name,regno,branch,semester,phone,email) VALUES ('$name','$regno','$branch','$semester','$phone','$email')";
+            	$sql=$conn->prepare($sqlqr);
+           		$sql->bindParam(':nam',$name);
+           		$sql->bindParam(':rno',$regno);
+            	$sql->bindParam(':br',$branch);
+            	$sql->bindParam(':sem',$semester);
+            	$sql->bindParam(':ph',$phone);
+            	$sql->bindParam(':mail',$email);
+            	if($sql->execute());
+            		$success="Successfully Registered";
+        	}
+        	catch(PDOException $e)
+        	{
+        		$error="Registration number already entered";
+        	}
             }
         }
     }
