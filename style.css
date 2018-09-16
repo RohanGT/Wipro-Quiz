@@ -1,7 +1,9 @@
-
+@font-face {
+    font-family: 'NexaFreeLightwebfont';
+    src: url(fonts/NexaFreeLightwebfont.ttf) format('truetype');
+}
 * {
-    font-family: 'Quicksand', sans-serif;
-
+    font-family: 'NexaFreeLightwebfont';
     margin: 0;
     padding: 0;
 }
@@ -13,16 +15,26 @@ body
 {
     background: linear-gradient(to right, #B483CD, #442C64);
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
     box-sizing: border-box;
-    overflow-y: hidden;
     overflow-x: hidden;
+}
+.Grid
+{
+    display: grid !important;
+    grid-template-areas: 
+        '. . . . lname . lregno .'
+        '. welcome welcome . fname fname fregno fregno'
+        '. wipro wipro . lbranch . lsem .'
+        '. wipro wipro . fbranch fbranch sem sem'
+        '. . . . lemail . lphone .'
+        '. ins ins . femail femail fphone fphone'
+        '. . . . . submit submit . ';
 }
 #tt
 {
     float: right;
-    max-width: 25vh;
-    max-height: 25vh;
+    max-width: 15vh;
+    max-height: 15vh;
     height: auto;
     width: auto;
 }
@@ -30,14 +42,7 @@ body
 {
     max-width: 30vw;   
 }
-label {
-    color: #FFF !important;
-}
-h2 {
-    text-align: center;
-    color: rgba(238, 238, 238,0.95);
-    text-shadow: 0 0 5px #000000;
-}
+/*
 main {
     width: 100%;
     margin-top: 12vh;
@@ -46,97 +51,75 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-}
-/*
-#container
-{
-    background-color: white;
-    height:500px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    box-shadow: 5px 5px 3px #472158;
-    border-radius: 4px;
-    padding: 1%;
-    text-align: left;
-    background-image: url('wipro.png');
-    background-repeat: no-repeat;
-    background-size: 50% 60%;
-    background-position: right ;
 }*/
-#wipro
-{
-    max-width: 50vh;
-    max-height: 50vh;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    height: auto;
-    width: auto;
-}
 h1
 {
-    margin-top: 5vh;
+    margin-top: -5vh;
     display: block;
     text-align:center;
     color: rgba(238, 238, 238,0.95);
     text-shadow: 0 0 5px #000000;
     padding-bottom: 10px;
 }
-section 
+.wiprod
 {
-    width: 50%;
-    margin-top: -20vh;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    grid-area: wipro;
 }
-
-section>div {
-    padding: 50px;
-    color: #FFF;
-    font-size: 1.15em;
-}
-
-form {
-    width: 50%;
-    height: 100%;
-    float: right;
-    clear: both;
-}
-.final
+#wipro
 {
-    margin-left:20px;
-}
-.sub
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 50vh;
+    max-height: 50vh;
+    /*display: flex;
     align-content: center;
+    justify-content: center;*/
+    height: auto;
+    width: auto;
 }
-#submit
+.h2
 {
-    background-color: #4cadad;
-    border:none;
-    color:white;
-    transition: background-color 0.5s;   
-    border-radius: 6px;
-    margin-left: 35%;
-    width: 30%;
-    padding: 8px ;
-    box-shadow: 4px 4px 6px black;
+    grid-area: welcome;
 }
-#submit:hover
+h2 
 {
-    background-color: #3e8e8e;
-    cursor: pointer;
+    text-align: center;
+    color: rgba(238, 238, 238,0.95);
+    text-shadow: 0 0 5px #000000;
 }
-.i , #sem2
+.ins
 {
-    font-weight: 900;
+    grid-area: ins;
+}
+form 
+{
+    height: 100%;
+}
+.fname{grid-area: fname};
+.fbranch{grid-area: fbranch};
+.fregno{grid-area: fregno};
+.fphone{grid-area: fphone};
+.femail{grid-area: femail};
+.lname{grid-area: lname};
+.lbranch{grid-area: lbranch};
+.lregno{grid-area: lregno};
+.lphone{grid-area: lphone};
+.lemail{grid-area: lemail};
+.lsem{grid-area: lsem};
+.f2
+{
+    text-align: center;
+    /*
+    margin-bottom: 1px;
+    margin-left: -8vw;*/
+}
+label 
+{
+    color: #FFF;
+    width: 9.2vw;
+    white-space: nowrap;
+    font-size: 2vh;
+}
+.i
+{
     text-align: center;
     border-top: none;
     border-left: none;
@@ -149,27 +132,57 @@ form {
     transition: border-color 1s;
 }
  
-.i:focus , #sem2:focus
+.i:focus
 {
     outline:none;
     border-color: #00b2b2;
 }
-.f2
+.semf2
 {
-    text-align: center;
     margin-bottom: 10px;
+    margin-left: -2vw;
+    grid-area: sem;
 }
-label { 
-    white-space: nowrap;
-    overflow: hidden;
-    float:left;  
-    font-size: 3vh;   
-    }
-
-.f1
+.semf2 select
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    border-style: border-box;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 15px;
+    margin-left: 1.5vw;
+    width: 69%;
+}
+.finald
+{
+    grid-area: final;
+}
+.final
+{
+    font-size: 1.15em;
+    color: white;
+}
+.sub
+{
+    grid-area: submit;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#submit
+{
 
+    background-color: #4cadad;
+    border:none;
+    color:white;
+    transition: background-color 0.5s;   
+    border-radius: 6px;
+    width: 35%;
+    margin-top: 1vw;
+    padding: 8px ;
+    box-shadow: 4px 4px 6px black;
+}
+#submit:hover
+{
+    background-color: #3e8e8e;
+    cursor: pointer;
 }
