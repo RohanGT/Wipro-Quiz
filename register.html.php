@@ -5,7 +5,7 @@ session_start();
 <html>
 <head>
 	<title>Quiz Registration</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -31,11 +31,9 @@ session_start();
 			</form>
 			<input type="email" name="email" placeholder="email" required>
 			<input type="number" name="number" placeholder="Mobile-No" min="1000000000" max="9999999999" required>
-			<input type="submit" name="submit" value="submit">
 		</form>
 	</div>
 	<div class="right-box"></div>
 	</div>
 </body>
 </html>
-
