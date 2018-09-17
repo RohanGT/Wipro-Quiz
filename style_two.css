@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'NexaFreeLightwebfont';
+    src: url(fonts/NexaFreeLightwebfont.ttf) format('truetype');
+}
+
+* {
+    font-family: 'NexaFreeLightwebfont';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+	color: rgba(0,0,0,0.95);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body {
+	height: 100vh;
+	background: linear-gradient(45deg, #301157, #FFC412, #B4156E, #053674, #389BB5, #A4CE4F);
+	background-size: 1000% 1000%;
+	animation: fancy infinite 30s;
+	color: #FFF;
+}
+
+@keyframes fancy {
+	0% {
+	    background-position: 0% 50%;
+	}
+	50% {
+	    background-position: 100% 50%;
+	}
+	100% {
+	    background-position: 0% 50%;
+	}
+}
+
+img {
+	height: 10vh;
+}
+
+header {
+	height: 12vh;
+	position: absolute;
+	width: 100vw;
+
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	/*background: red;*/
+	background: rgba(0, 0, 0, 0.1);
+}
+
+main {
+	height: 100vh;
+	padding-top: 15vh;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+
+	/*background: yellow;*/
+}
+
+h2 {
+	font-size: 2em;
+}
+
+p {
+	font-size: 1.1em;
+}
+
+#intro {
+	width: 40vw;
+	margin: 50px;
+	text-align: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+form {
+	margin: 50px;
+	width: 35vw;
+}
+
+label {
+	color: #FFF !important;
+}
+
+a,
+.btn {
+	text-transform: uppercase;
+	display: inline-block;
+	width: 300px;
+	padding: 8px;
+	color: #fff;
+	border: 2px solid #FFF;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	margin: 10px auto;
+}
+
+a:hover,
+.btn:hover,
+a:active,
+.btn:active {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #FFF;
+	border: transparent solid 2px;
+}
+
+.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
