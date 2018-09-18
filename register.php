@@ -41,11 +41,11 @@ require'form.php'
             <div class="fields">
 	            <div class="field">
 	                <label for="regno">Registration No</label>
-	                <input type="text" name="regno" placeholder="Registration Number" pattern="[0-9].{9}" required value="<?php if(!empty($regno)) echo $regno ?>">
+	                <input type="text" name="regno" placeholder="Registration Number" min="130000000" max="190000000" required value="<?php if(!empty($regno)) echo $regno ?>">
 	            </div>
 	            <div class="field">
 	                <label for="phone">Phone No</label>
-	                <input type="text" name="phone" placeholder="Mobile No" pattern="[0-9].{10}" required >
+	                <input type="text" name="phone" placeholder="Mobile No" min="1000000000" max="999999999" required value="<?php if(!empty($phone)) echo $phone?>">
 	            </div>
 	        </div>
             <div class="fields">
@@ -69,10 +69,13 @@ require'form.php'
 	        </div>
             <div class="field">
                 <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Email" required value="<?php if(!empty($email)) echo $email?>">
             </div>
-            
-            <div class="submit btn centered">Submit</div>
+            <span><?php echo $error?></span>
+            <span><?php echo $success?></span>
+            <div class="submit btn centered">
+            	<input type="submit" name="submit" class="btn" value="Submit">
+            </div>
         </form>
     </main>
 </body>
