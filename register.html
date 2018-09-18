@@ -1,6 +1,5 @@
 <?php
-require'form.php'
-?>
+include
 <!DOCTYPE HTML>
 <html>
 
@@ -11,7 +10,7 @@ require'form.php'
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/components/form.min.css">
-    <link rel="stylesheet" href="style_two.css?<?=filemtime("style_two.css")?>">
+    <link rel="stylesheet" href="style_two.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -33,25 +32,25 @@ require'form.php'
             
             <a href="Document.pdf" download> Download Instructions </a>
         </div>
-        <form method="POST" class="ui equal width form" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>' enctype="multipart/form data">
+        <form method="POST" class="ui equal width form">
             <div class="field">
                 <label for="name">Name</label>
-                <input type="text" name="name" class="i" placeholder="Name" required value="<?php if(!empty($name)) echo $name?>">
+                <input type="text" name="name" placeholder="Name" required>
             </div>
             <div class="fields">
 	            <div class="field">
 	                <label for="regno">Registration No</label>
-	                <input type="text" name="regno" placeholder="Registration Number" pattern="[0-9].{9}" required value="<?php if(!empty($regno)) echo $regno ?>">
+	                <input type="text" name="regno" placeholder="Registration Number" pattern="[0-9].{9}" required>
 	            </div>
 	            <div class="field">
 	                <label for="phone">Phone No</label>
-	                <input type="text" name="phone" placeholder="Mobile No" pattern="[0-9].{10}" required >
+	                <input type="text" name="phone" placeholder="Mobile No" pattern="[0-9].{10}" required>
 	            </div>
 	        </div>
             <div class="fields">
 	            <div class="field">
 	                <label for="branch">Branch</label>
-	                <input type="text" name="branch" placeholder="Branch" required value="<?php if(!empty($branch)) echo $branch?>">
+	                <input type="text" name="branch" placeholder="Branch" required>
 	            </div>
 	            <div class="field four wide">
 	                <label>Semester</label>
@@ -72,7 +71,7 @@ require'form.php'
                 <input type="email" name="email" placeholder="Email" required>
             </div>
             
-            <div class="submit btn centered" name="submit">Submit</div>
+            <div class="submit btn centered">Submit</div>
         </form>
     </main>
 </body>

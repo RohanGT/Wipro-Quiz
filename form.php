@@ -18,7 +18,29 @@ $success="";
             $error= "All the fields are required to be filled!";
         }
         else
-        {
+        {    
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) 
+            {
+                $error = "Name must contain letters and spaces only";
+            }
+            else if($regno<130000000||$regno>190000000)
+            {
+                $error = "Invalid registration number";
+            }
+            else if(ctype_alpha($branch)==false)
+            {
+                $error="Invalid Branch";
+            }
+            else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+            {
+                $error="Invalid email format";
+            }
+            else if($phone<1000000000||$phone>9999999999)
+            {
+                $error="Invalid phone number";
+            }
+            else
+            {
         	try
         	{
             	$sqlqr="INSERT INTO user (name,regno,branch,semester,phone,email) VALUES ('$name','$regno','$branch','$semester','$phone','$email')";
@@ -36,6 +58,7 @@ $success="";
         	{
         		$error="Registration number already entered";
         	}
+            }
         }
     }
 ?>  
