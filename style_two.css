@@ -67,11 +67,10 @@ p {
 	font-size: 1.1em;
 }
 
-#intro {
+.intro {
 	width: 40vw;
 	margin: 50px;
 	text-align: center;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -125,3 +124,89 @@ a:active,
 	align-items: center;
 	flex-direction: column;
 }
+.dets {
+	position: fixed;
+   	bottom: 2vw;
+   	margin-left: 2vw;
+}
+
+@media only screen and (max-device-width: 790px) {
+	main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.intro {
+		position: static;
+		width: 100%;
+		margin-top:-4vw;
+		padding: 0% 5%;
+		padding-bottom: 2%;
+	}
+	form {
+		position: static;
+		width: 100%;
+		margin:0 -2vw;
+		padding: 0 5%;
+	}
+	.dets {
+		position: relative;
+		font-size: 1em;
+		text-align: center;
+		margin-left: 0;
+		margin-bottom: 20px !important;
+	}
+	header {
+		height: 10vh;
+	}
+	img {
+		height: 9vh;	
+	}
+
+@media only screen and (max-device-width: 765px) {
+	.intro {
+		padding: 0% 5%;
+		padding-bottom: 5%;
+		margin-top:20vw;
+	}
+	form {
+		margin-top: 5vw;
+	}
+	.dets {
+		position: static;
+		padding-top: 5vw;
+	}
+
+@media only screen and (max-device-width: 605px) {
+	.intro {
+		padding: 8% 5%;
+		margin-top:20vw;
+	}
+	.dets {
+		padding-top: 8vw;
+	}
+
+@media only screen and (max-device-width: 505px) {
+	.intro {
+		padding: 10% 5%;
+		padding-bottom: 15%;
+	}
+	.dets {
+		padding-top: 10vw;
+	}
+
+@media only screen and (max-device-width: 439px) {
+	.intro {
+		padding: 20% 5%;
+		padding-bottom: 20%;
+	}
+	.dets {
+		padding-top: 14vw;
+	}
+	header {
+		height: 8vh; 
+	}
+	img {
+		height: 7vh;	
+	}

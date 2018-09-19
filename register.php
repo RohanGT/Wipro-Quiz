@@ -23,7 +23,7 @@ require'form.php'
         <!-- <h1>Registration Form</h1> -->
     </header>
     <main>
-        <div id="intro">
+        <div class="intro">
             <div>
                 <h2> Welcome to the Wipro Quiz!</h2>
                 <p>
@@ -86,6 +86,11 @@ require'form.php'
         	</div>
         </form>
     </main>
+    <p class="dets" x-ms-format-detection="none">
+		Contact us:<br>
+	    Priyam : <b>+91 9999 9999 99</b><br>
+	    Arvind : <b>+91 9999 9999 99</b>
+    </p>
 </body>
 
 </html>
