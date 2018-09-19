@@ -167,45 +167,48 @@ a:active,
 	img {
 		height: 9vh;	
 	}
+}
 
 @media only screen and (max-device-width: 765px) {
-	.intro {
-		padding: 0% 5%;
-		margin-top:40vw;
-	}
 	form {
 		margin-top: 5vw;
 	}
 	.dets {
 		position: static;
-		padding-top:30vw;
+		padding-top:5vw;
 	}
-
+}
 @media only screen and (max-device-width: 605px) {
+	h2{
+		font-size: 1.9em;
+	}
+	p{
+		font-size: 1em;
+	}
 	.intro {
-		padding: 0% 4%;
-		margin-top:45vw;
+		padding: 30% 5% 10%!important;
 	}
 	.dets {
-		padding-top: 35vw;
+		padding-top: 16vw;
 	}
-
+}
 @media only screen and (max-device-width: 505px) {
 	.intro {
-		padding: 0% 2%;
-		margin-top: 58vw;
+		padding: 35% 5% 12%!important;
 	}
 	.dets {
-		padding-top: 40vw;
+		padding-top: 20vw;
 	}
-
-@media only screen and (max-device-width: 439px) {
+}
+@media only screen and (max-device-width: 470px) {
+	h2{
+		font-size: 1.5em;
+	}
+	p{
+		font-size: 0.8em;
+	}
 	.intro {
-		padding: 0% 2%;
-		margin-top:65vw;
-	}
-	form {
-		
+		padding: 55% 3% 15%!important;
 	}
 	.dets {
 		padding-top: 45vw;
@@ -216,3 +219,37 @@ a:active,
 	img {
 		height: 7vh;	
 	}
+}
+
+@media only screen and (max-device-width: 390px) {
+	.intro {
+		padding: 65% 3% 10%!important;
+	}
+	.dets {
+		padding-top: 60vw;
+	}
+}
+
+@media only screen and (max-device-width: 350px) {
+	h2{
+		font-size: 1.3em;
+	}
+	header {
+		height: 7vh; 
+	}
+	.intro {
+		padding: 70% 3% 10%!important;
+	}
+	.dets {
+		padding-top: 60vw;
+	}
+}
+
+@media only screen and (max-device-width: 350px) and (max-device-height:600px) {
+	.intro {
+		padding: 85% 3% 10%!important;
+	}
+	.dets {
+		padding-top: 75vw;
+	}
+}
