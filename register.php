@@ -3,10 +3,10 @@ require'form.php'
 ?>
 <!DOCTYPE HTML>
 <html>
-
 <head>
     <!-- <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> -->
     <title> Wipro | TT18</title>
+    <meta charset="UTF-8">
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css">
