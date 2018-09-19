@@ -18,34 +18,34 @@ function formValidate ()
 
     if (branch.value == "" || /^[a-zA-Z ]*$/.test(branch.value) == false)                                 
     {
-        window.alert("Please enter your branch.");
+        message.innerHTML="Please enter a valid branch";
         branch.focus();
         return false;
     }
 
     if (email.value.indexOf("@", 0) < 0 || email.value.indexOf(".", 0) < 0)                
     {
-        window.alert("Please enter a valid e-mail address.");
+        message.innerHTML="Please enter a valid email";
         email.focus();
         return false;
     }
 
     if (phone.value<1000000000 || phone.value > 9999999999)
     {
-    	window.alert ("Please enter a valid phone number.");
+    	message.innerHTML="Please enter a valid phone number";
     	phone.focus ();
     	return false;
     }
-    if (phone.value<130000000 || phone.value > 190000000)
+    if (regno.value<130000000 || regno.value > 190000000)
     {
-    	window.alert ("Please enter a valid registration number.");
+    	message.innerHTML="Please enter a valid registration number";
     	regno.focus ();
     	return false;
     }
 
     if (semester.selectedIndex < 1)
     {
-    	aler ("Please select your semester.");
+    	message.innerHTML="Please select your semester";
     	semester.focus ();
     	return false;
     }
