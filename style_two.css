@@ -36,33 +36,27 @@ body {
 }
 
 img {
-	height: 10vh;
+	height: 13vh;	/*old size 10vh*/
 }
 
 header {
 	height: 12vh;
 	position: absolute;
 	width: 100vw;
-
 	display: grid;
 	justify-items: center;
 	align-items: center;
 	grid-template-columns: 1fr 1fr 1fr;
-
-	/*background: red;*/
 	background: rgba(0, 0, 0, 0.1);
 }
 
 main {
 	height: 100vh;
-	padding-top: 15vh;
-
+	padding-top: 15vh; 
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around; /*old space between */
 	align-items: center;
 	flex-direction: row;
-
-	/*background: yellow;*/
 }
 
 h2 {
@@ -96,14 +90,14 @@ label {
 a,
 .btn {
 	text-transform: uppercase;
-	display: inline-block;
+	display: inline-block;/*pointless?*/
 	width: 300px;
 	padding: 8px;
 	color: #fff;
 	border: 2px solid #FFF;
 	text-align: center;
 	outline: none;
-	text-decoration: none;
+	text-decoration: none; /*pointless?*/
 	transition: all 0.2s ease;
 	margin: 10px auto;
 }
@@ -117,6 +111,14 @@ a:active,
 	border: transparent solid 2px;
 }
 
+.submit {
+	background-color : rgba(0,0,0,0);
+	font-family: 'NexaFreeLightwebfont';
+}
+
+.submit:hover {
+	cursor: pointer;
+}
 .centered {
 	display: flex;
 	justify-content: center;

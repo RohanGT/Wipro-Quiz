@@ -5,22 +5,26 @@ global $error;
 global $success;
 $error="";
 $success="";
+function valid_email($str) 
+{
+    return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/", $str)) ? FALSE : TRUE; //Check ix
+}
     if(isset($_POST['submit']))
     {   
         $name=valid($_POST['name']);
         $regno=valid($_POST['regno']);
         $branch=valid($_POST['branch']);
-        $semester=valid($_POST['semester']);
+        @$semester=valid($_POST['semester']);
         $phone=valid($_POST['phone']);
         $email=valid($_POST['email']);
         if (empty($name) || empty($regno) || empty($branch) || empty($semester) || empty($phone) ||empty($email))
         {
-            $error= "All the fields are required to be filled!";
+            $error= "All fields are required to be filled!";
         }
         else
         {    
             if (!preg_match("/^[a-zA-Z ]*$/",$name)) 
-            {
+            {   
                 $error = "Name must contain letters and spaces only";
             }
             else if($regno<130000000||$regno>190000000)
@@ -31,7 +35,7 @@ $success="";
             {
                 $error="Invalid Branch";
             }
-            else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+            else if(!valid_email($email))
             {
                 $error="Invalid email format";
             }
