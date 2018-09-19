@@ -56,7 +56,6 @@ require'form.php'
 	            <div class="field six wide required">
 	                <label for="semester">Semester</label>
 	                <select name="semester" class="ui dropdown">
-	                	<option value="" selected disabled>Semester</option>
 	                    <option value=1>1</option>
 	                    <option value=2>2</option>
 	                    <option value=3>3</option>

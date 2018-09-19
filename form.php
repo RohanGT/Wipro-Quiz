@@ -5,9 +5,13 @@ global $error;
 global $success;
 $error="";
 $success="";
-function valid_email($str) 
+function valid_email1($str) 
 {
-    return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/", $str)) ? FALSE : TRUE; //Check ix
+    return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/", $str)) ? FALSE : TRUE;
+}
+function valid_email2($str) 
+{
+    return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+)$/", $str)) ? FALSE : TRUE; 
 }
     if(isset($_POST['submit']))
     {   
@@ -31,18 +35,18 @@ function valid_email($str)
             {
                 $error = "Invalid registration number";
             }
-            else if(ctype_alpha($branch)==false)
-            {
-                $error="Invalid Branch";
-            }
-            else if(!valid_email($email))
-            {
-                $error="Invalid email format";
-            }
             else if($phone<1000000000||$phone>9999999999)
             {
                 $error="Invalid phone number";
             }
+            else if(ctype_alpha($branch)==false)
+            {
+                $error="Invalid Branch";
+            }
+            else if(!(valid_email1($email)||valid_email2($email)))
+            {
+                $error="Invalid email format";
+            } 
             else
             {
         	try
