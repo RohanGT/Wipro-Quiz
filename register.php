@@ -15,6 +15,7 @@ require'form.php'
     <link rel="stylesheet" href="style_two.css?<?=filemtime("style_two.css")?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src= " formval.js"></script>
 
 </head>
 
@@ -36,7 +37,7 @@ require'form.php'
             
             <a href="Document.pdf" download> Download Instructions </a>
         </div>
-        <form method="POST" class="ui equal width form" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>' enctype="multipart/form data">
+        <form method="POST" name="form" class="ui equal width form" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>' enctype="multipart/form data" onsubmit = "return formValidate()">
             <div class="field required">
                 <label for="name">Name</label>
                 <input type="text" name="name" placeholder="Name" required value="<?php if(!empty($name)) echo $name?>">
@@ -74,8 +75,11 @@ require'form.php'
                 <label for="email">Email</label>
                 <input type="email" name="email" placeholder="Email" required value="<?php if(!empty($email)) echo $email?>">
             </div>
+            <!---
             <span><?php echo $success?></span>
 			<span><?php echo $error?></span>
+            -->
+            <div id = "errorMessage"></div><br>
             <div class="centered">
             <?php /*check success and error	
             	<div class="ui success message">
