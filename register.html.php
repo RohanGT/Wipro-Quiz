@@ -12,10 +12,10 @@ session_start();
 <body>
 	<div id="container">
 		<div class="left-box">
-		<form method="POST" enctype="multipart/form-data" action='<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]) ?>' >
+		<form method="POST" enctype="multipart/form-data" action='<?php echo htmlspecialchars ($_SERVER["PHP_SELF"]) ?>'>
 			<p id="Register">Registration</p>
 			<input type="text" name="name" placeholder="Name" required>
-			<input type="number" name="regno" placeholder="Registration Number" required="" min="160000000" max="190000000" required title="Required">
+			<input type="number" name="regno" placeholder="Registration Number" required min="160000000" max="190000000" title="Required">
 			<input type="text" name="Branch" placeholder="Branch" required>
 			<form id="drp-dwn">Semester:
 				<select>
